@@ -56,10 +56,10 @@ SQL Database connection is handled by [SQLAlchemy](https://www.sqlalchemy.org/) 
    * Create a new user.
    * Accept `email`, `password`, `confirm_password`, and `user_name` values.
 
-2. `GET /users/:id` (Get a user by id endpoint)
+2. `GET /users/:user_id` (Get a user by id endpoint)
    * Find user by id and return its detail and preference data.
 
-3. `PUT /users/:id/preference` (Update user preference endpoint)
+3. `PUT /users/:user_id/preference` (Update user preference endpoint)
    * Update user preference related to best day recommendation from 5-day weather forecast.
    * Accepted values (all fields are optional/nullable):
      * `location`: User location (e.g. "Berlin,DE")
@@ -70,10 +70,10 @@ SQL Database connection is handled by [SQLAlchemy](https://www.sqlalchemy.org/) 
      * `max_rain_volume`: Max accepted rain volume (e.g. 1.5)
      * `max_snow_volume`: Max accepted snow volume (e.g. 2)
 
-4. `GET /users/:id/weather` (Get user's current weather data endpoint)
+4. `GET /users/:user_id/weather` (Get user's current weather data endpoint)
    * Return user's current weather data from OpenWeatherMap.
 
-5. `GET /users/:id/forecast-best-day` (Find the recommended best day from 5-day weather forecast endpoint)
+5. `GET /users/:user_id/forecast-best-day` (Find the recommended best day from 5-day weather forecast endpoint)
    * Find and return the recommended best day from OpenWeatherMap's 5-day weather forecast for a user.
    * User's `location` in preference must be set for this endpoint to work.
    * If no best day can be found, 404 (not found) error response will be returned.
