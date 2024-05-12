@@ -13,7 +13,6 @@ class CreateUserData(BaseModel):
 
 class UserPreferenceData(BaseModel):
     location: str | None
-    # measurement_units: str | None
     temp_min: float | None
     temp_max: float | None
     max_cloudiness: float | None

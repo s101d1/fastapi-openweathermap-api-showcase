@@ -10,7 +10,6 @@ class UserPreference(Base):
     __tablename__ = "user_preferences"
 
     location = mapped_column(Text)
-    # measurement_units = mapped_column(String(50))
     temp_min = mapped_column(Double)
     temp_max = mapped_column(Double)
     max_cloudiness = mapped_column(Double)
@@ -26,7 +25,6 @@ class UserPreference(Base):
                 f", created_at={self.created_at!r}"
                 f", updated_at={self.updated_at!r}"
                 f", location={self.location!r}"
-                # f", measurement_units={self.measurement_units!r}"
                 f", temp_min={self.temp_min!r}"
                 f", temp_max={self.temp_max!r}"
                 f", max_cloudiness={self.max_cloudiness!r}"

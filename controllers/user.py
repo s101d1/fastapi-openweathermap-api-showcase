@@ -70,9 +70,6 @@ def update_user_preference(user_id: UUID, data: UserPreferenceData):
     if data.temp_min is not None and data.temp_max is not None and data.temp_min > data.temp_max:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid temperature min value")
 
-    # if data.measurement_units and data.measurement_units not in ["standard", "imperial", "metric"]:
-    #     raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid measurement units")
-
     if data.max_cloudiness is not None and data.max_cloudiness < 0:
         raise HTTPException(status_code=status.HTTP_422_UNPROCESSABLE_ENTITY, detail="Invalid max cloudiness value")
 
@@ -87,7 +84,6 @@ def update_user_preference(user_id: UUID, data: UserPreferenceData):
 
     preference_data = {
         "location": data.location,
-        # "measurement_units": data.measurement_units,
         "temp_min": data.temp_min,
         "temp_max": data.temp_max,
         "max_cloudiness": data.max_cloudiness,
